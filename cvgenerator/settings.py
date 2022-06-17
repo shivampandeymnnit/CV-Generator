@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0b(=deau9a+^kx8mx(4ugp93zoz&@-%n)xje6q(3*q&^worp#a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['cv-generator-swapnilnyk10.herokuapp.com', '127.0.0.1']
 
