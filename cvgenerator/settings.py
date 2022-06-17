@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+# Heroku Deployment Guide
+# https://github.com/akjasim/codeband-django-heroku
 from pathlib import Path
 import os
 
@@ -26,7 +28,7 @@ SECRET_KEY = 'django-insecure-0b(=deau9a+^kx8mx(4ugp93zoz&@-%n)xje6q(3*q&^worp#a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cv-generator-swapnilnyk10.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -118,7 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

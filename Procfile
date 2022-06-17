@@ -1,0 +1,1 @@
+web: gunicorn cvgenerator.wsgi --log-file -
