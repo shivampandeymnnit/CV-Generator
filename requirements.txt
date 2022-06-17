@@ -4,4 +4,4 @@ gunicorn==20.1.0
 pdfkit==1.0.0
 sqlparse==0.4.2
 whitenoise==6.2.0
-wkhtmltopdf-pack==0.12.2.0
+wkhtmltopdf-pack==0.12.2.4
