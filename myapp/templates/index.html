@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+  {% block body %}
+
+    {% if messages%}
+
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+            {{message}}
+        </div>
+        {% endfor %}
+        <br>
+    {% endif %}
+
+    <h1>Welcome to CV Generator</h1>
+
+    {% if user.is_authenticated %}
+        {% if data is None %}
+          <p>There are no entries.... Please fill the entries</p>
+        {% else %}
+          <p>There is an entry.... update below or click on Generate CV !!! </p>
+        {% endif %}
+      <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <form method = "POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <input type="hidden" name="username" value={{user.username}} id="username">
+                  <label for="name" class="form-label">Name :</label>
+                  <input type="text" class="form-control" id="name" value = "{{data.name}}" name = "name" placeholder = "John Wick" required>
+                </div>
+                <div class="mb-3">
+                  <label for="intro" class="form-label">Brief Intro about Yourself :</label>
+                  <input type="text" class="form-control" id="intro" value = "{{data.intro}}" name = "intro"  placeholder = "An Enthusiast programmer, likes to solve new problems" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address :</label>
+                  <input type="email" class="form-control" value = "{{data.email}}" name = "email" id="email"  placeholder = "JohnWick@gmail.com" required>
+                  {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone No. :</label>
+                  <input type="number" class="form-control" value = "{{data.phone}}" name = "phone" id="phone" required>
+                </div>
+                <div class="mb-3">
+                  <label for="school" class="form-label">School :</label>
+                  <input type="text" class="form-control" value = "{{data.school}}"name = "school" id="school" placeholder="Higher Secondary or High School" required>
+                </div>
+                <div class="mb-3">
+                  <label for="college" class="form-label">College :</label>
+                  <input type="text" class="form-control" value = "{{data.college}}" name = "college" id="college" placeholder="MNNIT Allahabad" required>
+                </div>
+                <div class="mb-3">
+                  <label for="branch" class="form-label">Branch or Specialization :</label>
+                  <input type="text" class="form-control" value = "{{data.branch}}" name = "branch" id="branch" placeholder="Computer Science" required>
+                </div>
+                <div class="mb-3">
+                  <label for="address" class="form-label">Address :</label>
+                  <input type="text" class="form-control" value = "{{data.address}}" name = "address" id="address" placeholder="Jabalpur" required>
+                </div>
+                <div class="mb-3">
+                  <label for="codeforces" class="form-label">Codeforces Handle :</label>
+                  <input type="text" class="form-control" value = "{{data.codeforces}}" name = "codeforces" id="codeforces" placeholder="JohnWick10 or NA" >
+                </div>
+                <div class="mb-3">
+                  <label for="codechef" class="form-label">Codechef Handle :</label>
+                  <input type="text" class="form-control" value = "{{data.codechef}}" name = "codechef" id="codechef" placeholder="JohnWick10 or NA" >
+                </div>
+                <div class="mb-3">
+                  <label for="leetcode" class="form-label">LeetCode Handle :</label>
+                  <input type="text" class="form-control" value = "{{data.leetcode}}" name = "leetcode" id="leetcode" placeholder="JohnWick10 or NA" >
+                </div>
+                <div class="mb-3">
+                  <label for="github" class="form-label">GitHub Handle :</label>
+                  <input type="text" class="form-control" value = "{{data.github}}" name = "github" id="github" placeholder="JohnWick10 or NA" >
+                </div>
+                <div class="mb-3">
+                  <label for="projects" class="form-label">Projects :</label>
+                  <input type="text" class="form-control" value = "{{data.projects}}" name = "projects" id="projects" >
+                </div>
+                <div class="mb-3">
+                  <label for="skills" class="form-label">Skills :</label>
+                  <input type="text" class="form-control" value = "{{data.skills}}" name = "skills" id="skills" placeholder="DSA, C++, Problem Solving" required >
+                </div>
+                <div class="mb-3">
+                  <label for="achievement" class="form-label">Achievement :</label>
+                  <input type="text" class="form-control" value = "{{data.achievement}}" name ="achievement" id="achievement" placeholder="Among top 100 coders in India" required >
+                </div>
+                <div class="mb-3">
+                  <label for="experience" class="form-label">Experience :</label>
+                  <input type="text" class="form-control" value = "{{data.experience}}" name = "experience" id="experience" placeholder="Member of CC Club or NA"  >
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <br><br><br>
+              </form>
+            </div>
+          </div>
+      </div>
+    {% else %}
+      <h4>Please login to start building your resume</h4>
+    {% endif %}
+  {% endblock %}
