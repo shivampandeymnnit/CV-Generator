@@ -18,4 +18,5 @@
   2) wkhtmltopdf
   
  ## Contributors:
+ *[SHIVAM PANDEY](github.com/shivampandeymnnit)
 * [Swapnil Nayak](https://github.com/swapnilnyk10)
