@@ -1,5 +1,5 @@
 <h1 align="center">CV-Generator</h1>
-<h3 align="center">Swapnil Nayak (swapnilnyk10)</h3>
+<h3 align="center">SHIVAM PANDEY (shivampandeymnnit)</h3>
 
  ## Link to Deployed App
  <a href="https://cv-generator-swapnilnyk10.herokuapp.com/">Click here</a>
